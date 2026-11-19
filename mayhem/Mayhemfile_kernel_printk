@@ -1,0 +1,9 @@
+project: savantenvs/xv6-riscv
+target: kernel_printk
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/kernel_printk/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/fuzz_kernel_printk
+    libfuzzer: true
+    timeout: 5

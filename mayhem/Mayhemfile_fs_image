@@ -1,0 +1,9 @@
+project: savantenvs/xv6-riscv
+target: fs_image
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fs_image/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/fuzz_fs_image
+    libfuzzer: true
+    timeout: 5

@@ -1,0 +1,9 @@
+project: savantenvs/xv6-riscv
+target: sh
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/sh/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/sh_afl @@
+    afl: true
+    timeout: 5

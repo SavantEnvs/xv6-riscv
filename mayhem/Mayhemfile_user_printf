@@ -1,0 +1,9 @@
+project: savantenvs/xv6-riscv
+target: user_printf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/user_printf/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/fuzz_user_printf
+    libfuzzer: true
+    timeout: 5
